@@ -67,3 +67,15 @@
         <li><a href="/gallery">Кот</a></li>
     </ul>
 </nav>
+<p>
+    <tr>
+        <th>id</th>
+        <th>user_name</th>
+    </tr>
+    <?php foreach ($data['$users'] as $user) : ?>
+        <tr>
+            <td><?= $user['id'] ?></td>
+            <td><?= $user['name'] ?></td>
+        </tr>
+    <?php endforeach ?>
+</p>
