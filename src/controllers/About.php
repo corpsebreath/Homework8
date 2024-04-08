@@ -3,16 +3,21 @@
 namespace src\controllers;
 
 use src\core\Viewer;
+use src\models\Users;
 
 class About
 {
     public function index()
     {
-        Viewer::view('About','about_index');
+        $model = new Users();
+        $data['$users'] = $model->findOne(1);
+        Viewer::view('About','about_index', $data);
     }
 
     public function page()
     {
-        Viewer::view('About','about_page');
+        $model = new Users();
+        $data['$users'] = $model->findOne(1);
+        Viewer::view('About','about_page', $data);
     }
 }

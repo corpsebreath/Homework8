@@ -3,26 +3,36 @@
 namespace src\controllers;
 
 use src\core\Viewer;
+use src\models\Galleries;
+
 
 class Gallery
 {
     public function index()
     {
-        Viewer::view('Gallery', 'gallery_index');
+        $model = new Galleries();
+        $data['$galleries'] = $model->findOne(1);
+        Viewer::view('Gallery', 'gallery_index', $data);
     }
 
     public function create()
     {
-        Viewer::view('Gallery','gallery_create');
+        $model = new Galleries();
+        $data['$galleries'] = $model->findOne(1);
+        Viewer::view('Gallery','gallery_create', $data);
     }
 
     public function update()
     {
-        Viewer::view('Gallery','gallery_update');
+        $model = new Galleries();
+        $data['$galleries'] = $model->findOne(1);
+        Viewer::view('Gallery','gallery_update', $data);
     }
 
     public function delete()
     {
-        Viewer::view('Gallery','gallery_delete');
+        $model = new Galleries();
+        $data['$galleries'] = $model->findOne(1);
+        Viewer::view('Gallery','gallery_delete', $data);
     }
 }

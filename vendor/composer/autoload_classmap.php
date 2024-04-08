@@ -12,4 +12,8 @@ return array(
     'src\\controllers\\Home' => $baseDir . '/src/controllers/Home.php',
     'src\\core\\Router' => $baseDir . '/src/core/Router.php',
     'src\\core\\Viewer' => $baseDir . '/src/core/Viewer.php',
+    'src\\models\\Gallery' => $baseDir . '/src/models/Gallery.php',
+    'src\\models\\Model' => $baseDir . '/src/models/Model.php',
+    'src\\models\\Posts' => $baseDir . '/src/models/Posts.php',
+    'src\\models\\Users' => $baseDir . '/src/models/Users.php',
 );

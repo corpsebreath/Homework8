@@ -26,3 +26,15 @@
 <button>
     <a href="/gallery/delete">Delete</a>
 </button>
+<p>
+    <tr>
+        <th>id</th>
+        <th>gallery_name</th>
+    </tr>
+    <?php foreach ($data['$galleries'] as $gallery) : ?>
+        <tr>
+            <td><?= $gallery['id'] ?></td>
+            <td><?= $gallery['name'] ?></td>
+        </tr>
+    <?php endforeach ?>
+</p>

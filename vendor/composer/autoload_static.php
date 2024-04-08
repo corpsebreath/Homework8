@@ -27,6 +27,10 @@ class ComposerStaticInitd5872c3d5205a37fbe9e80c096b4d872
         'src\\controllers\\Home' => __DIR__ . '/../..' . '/src/controllers/Home.php',
         'src\\core\\Router' => __DIR__ . '/../..' . '/src/core/Router.php',
         'src\\core\\Viewer' => __DIR__ . '/../..' . '/src/core/Viewer.php',
+        'src\\models\\Gallery' => __DIR__ . '/../..' . '/src/models/Gallery.php',
+        'src\\models\\Model' => __DIR__ . '/../..' . '/src/models/Model.php',
+        'src\\models\\Posts' => __DIR__ . '/../..' . '/src/models/Posts.php',
+        'src\\models\\Users' => __DIR__ . '/../..' . '/src/models/Users.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
