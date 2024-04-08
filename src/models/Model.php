@@ -1,6 +1,7 @@
 <?php
 
 namespace src\models;
+use \PDO;
 
 abstract class Model
 {
@@ -13,4 +14,6 @@ abstract class Model
     {
         return $this->models;
     }
+
+
 }
