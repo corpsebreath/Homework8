@@ -5,12 +5,10 @@ namespace src\orm;
 final class Delete extends Sql implements Query
 {
     private string $tableName = '';
-    private string $fields = '*';
-    private string $condition = '';
-
+    
     public function buildQuery() : string
     {
-        return 'DELETE FROM' . $this->tableName . ' WHERE ' . $this->condition;
+        return 'DELETE FROM' . $this->tableName;
     }
 
     public function setTableName(string|array $tableName) : void
@@ -24,21 +22,6 @@ final class Delete extends Sql implements Query
             $tableName = $this->tableName;
         }
 
-    }
-
-    public function setFields(string|array $fields) : void
-    {
-        if (is_array($fields)) {
-            $this->fields = implode(",", $fields);
-        } else {
-            $fields = $this->fields;
-        }
-
-    }
-
-    public function setCondition(string $condition) : void
-    {
-        $this->condition = $condition;
     }
 
     public function getData() : array
