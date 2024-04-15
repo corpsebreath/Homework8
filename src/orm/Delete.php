@@ -2,14 +2,15 @@
 
 namespace src\orm;
 
-final class Select extends Sql implements Query
+final class Delete extends Sql implements Query
 {
     private string $tableName = '';
     private string $fields = '*';
+    private string $condition = '';
 
     public function buildQuery() : string
     {
-        return 'SELECT ' . $this->fields . ' FROM ' . $this->tableName;
+        return 'DELETE FROM' . $this->tableName . ' WHERE ' . $this->condition;
     }
 
     public function setTableName(string|array $tableName) : void
@@ -33,6 +34,11 @@ final class Select extends Sql implements Query
             $fields = $this->fields;
         }
 
+    }
+
+    public function setCondition(string $condition) : void
+    {
+        $this->condition = $condition;
     }
 
     public function getData() : array
