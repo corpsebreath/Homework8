@@ -3,11 +3,11 @@
         <th>id</th>
         <th>post_name</th>
     </tr>
-    <?php foreach ($data['$posts'] as $post) : ?>
-        <tr>
-            <td><?= $post['id'] ?></td>
-            <td><?= $post['name'] ?></td>
-        </tr>
-    <?php endforeach ?>
-</table>
 
+</table>
+<form method="post">
+    <input name="author_id">
+    <input name="title">
+    <input name="content">
+    <input type="submit" name="save">
+</form>
