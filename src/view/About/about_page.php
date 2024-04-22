@@ -6,15 +6,12 @@
         <a href="/home">Главная</a>
     </button>
 </section>
-<p>
+<table>
     <tr>
         <th>id</th>
-        <th>user_name</th>
+        <th>first_name</th>
+        <th>second_name</th>
+        <th>login</th>
+        <th>email</th>
     </tr>
-    <?php foreach ($data['$users'] as $user) : ?>
-        <tr>
-            <td><?= $user['id'] ?></td>
-            <td><?= $user['name'] ?></td>
-        </tr>
-    <?php endforeach ?>
-</p>
+</table>

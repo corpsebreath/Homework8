@@ -4,25 +4,15 @@ namespace src\orm;
 
 final class Select extends Sql implements Query
 {
-    private string $tableName = '';
     private string $fields = '*';
 
     public function buildQuery() : string
     {
-        return 'SELECT ' . $this->fields . ' FROM ' . $this->tableName;
-    }
-
-    public function setTableName(string|array $tableName) : void
-    {
-        if (is_array($tableName)) {
-            foreach ($tableName as $alias => $name) {
-                $this->tableName = $name . ' ' . $alias;
-                break;
-            }
-        } else {
-            $tableName = $this->tableName;
+        $sql = 'SELECT ' . $this->fields . ' FROM ' . $this->tableName;
+        if (!empty($this->where)) {
+            $sql .= $this->where;
         }
-
+        return $sql;
     }
 
     public function setFields(string|array $fields) : void
@@ -30,7 +20,7 @@ final class Select extends Sql implements Query
         if (is_array($fields)) {
             $this->fields = implode(",", $fields);
         } else {
-            $fields = $this->fields;
+            $this->fields = $fields;
         }
 
     }

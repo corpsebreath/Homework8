@@ -4,23 +4,14 @@ namespace src\orm;
 
 final class Delete extends Sql implements Query
 {
-    private string $tableName = '';
-
     public function buildQuery() : string
     {
-        return 'DELETE FROM' . $this->tableName;
-    }
-
-    public function setTableName(string|array $tableName) : void
-    {
-        if (is_array($tableName)) {
-            foreach ($tableName as $alias => $name) {
-                $this->tableName = $name . ' ' . $alias;
-                break;
-            }
-        } else {
-            $tableName = $this->tableName;
+        $sql = 'DELETE FROM ' . $this->tableName;
+        if (!empty($this->where)) {
+            $sql .= $this->where;
         }
-
+        var_dump($sql);
+        return $sql;
     }
+
 }

@@ -82,3 +82,4 @@
     <input name="email">
     <input type="submit" name="save">
 </form>
+<button><a href="/about/update">Update</a></button>
