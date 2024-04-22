@@ -4,21 +4,11 @@ namespace src\models;
 
 class Posts extends Model
 {
-    protected array $model = [
-        [
-            'id'    => 1,
-            'name'  => 'Test post1'
-        ]
+    protected string $tableName = 'posts';
+    protected array $fieldList = [
+        'author_id',
+        'title',
+        'content',
     ];
-
-    protected array $models = [
-        [
-            'id'    => 1,
-            'name'  => 'Test post1'
-        ],
-        [
-            'id'    => 2,
-            'name'  => 'Test post2'
-        ],
-    ];
+    protected string $primaryKey = 'post_id';
 }

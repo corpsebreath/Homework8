@@ -67,15 +67,18 @@
         <li><a href="/gallery">Кот</a></li>
     </ul>
 </nav>
-<p>
-    <tr>
-        <th>id</th>
-        <th>user_name</th>
-    </tr>
-    <?php foreach ($data['$users'] as $user) : ?>
-        <tr>
-            <td><?= $user['id'] ?></td>
-            <td><?= $user['name'] ?></td>
-        </tr>
-    <?php endforeach ?>
-</p>
+<tr>
+    <th>first_name</th>
+    <th>second_name</th>
+    <th>login</th>
+    <th>password</th>
+    <th>email</th>
+</tr>
+<form method="post">
+    <input name="first_name">
+    <input name="second_name">
+    <input name="login">
+    <input name="pass">
+    <input name="email">
+    <input type="submit" name="save">
+</form>
